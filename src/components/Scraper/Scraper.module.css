@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .cards {
@@ -15,4 +15,24 @@
   height: 20px;
   padding: 10px;
   border-radius: 5px;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.searchButton {
+  padding: 10px 20px;
+  border: none;
+  background-color: #329da8;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color ease 0.1s;
+}
+
+.searchButton:hover {
+  background-color: #1e6f78;
 }

@@ -34,14 +34,20 @@ const Scraper = () => {
 
   return (
     <div className={styles.container}>
-      <input
-        type="text"
-        value={linkToScrape}
-        onChange={(e) => setLinkToScrape(e.target.value)}
-        onKeyDown={(e) => e.key === "Enter" && scrapeLink()}
-        className={styles.input}
-      />
-      <div>{scrapedLink !== "" ? `Scraped Link: ${scrapedLink}` : <div />}</div>
+      <h1>Enter a link from Wikipedia</h1>
+      <div className={styles.inputContainer}>
+        <input
+          type="text"
+          value={linkToScrape}
+          onChange={(e) => setLinkToScrape(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && scrapeLink()}
+          className={styles.input}
+        />
+        <button className={styles.searchButton} onClick={() => scrapeLink()}>
+          Search
+        </button>
+      </div>
+      <div>{scrapedLink !== "" ? `Results for: ${scrapedLink}` : <div />}</div>
       <div className={styles.cards}>
         <ScrapeCard
           cardName="Bankruptcy"
