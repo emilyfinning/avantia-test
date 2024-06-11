@@ -4,6 +4,7 @@ import styles from "./Scraper.module.css";
 
 const Scraper = () => {
   const [linkToScrape, setLinkToScrape] = useState("");
+  const [scrapedLink, setScrapedLink] = useState("");
 
   const [isBankrupt, setIsBankrupt] = useState<undefined | boolean>();
   const [bankruptEvidence, setBankruptEvidence] = useState<string[]>([]);
@@ -27,6 +28,8 @@ const Scraper = () => {
 
     setFraudEvidence(jsonResponse.fraud.evidence);
     setIsFraud(jsonResponse.fraud.result);
+
+    setScrapedLink(linkToScrape);
   };
 
   return (
@@ -38,9 +41,10 @@ const Scraper = () => {
         onKeyDown={(e) => e.key === "Enter" && scrapeLink()}
         className={styles.input}
       />
+      <div>{scrapedLink !== "" ? `Scraped Link: ${scrapedLink}` : <div />}</div>
       <div className={styles.cards}>
         <ScrapeCard
-          cardName="Bankrupt"
+          cardName="Bankruptcy"
           evidence={bankruptEvidence}
           guilty={isBankrupt}
         />
