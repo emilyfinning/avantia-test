@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const evidenceCharLimit = 40;
+const evidenceCharLimit = 100;
 
 const getArticle = async (link: string) => {
   const res = await fetch(link);

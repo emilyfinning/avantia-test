@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.input {
+  width: 400px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
